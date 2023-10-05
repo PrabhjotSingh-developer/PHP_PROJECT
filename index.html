@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="form_database">
+        <div class="all_operations">
+
+             <h2>Please Click the button which operation you want to perform</h2>
+             <div class="operation_btn">
+                  <button class="btn-1">Insert</button>
+                   <button class="btn-2">Update</button>
+                  <button class="btn-3">Delete</button>
+                  <button class="btn-4" name="display">Display</button>
+             </div> 
+        
+        </div>
+         
+         <form action="database.php" class="form_data">
+           <h4>Insert data</h4>
+            <div>
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name">
+            </div>
+            <div>
+                   <label for="rollno">Roll No</label>
+                   <input type="text" name="rollno" id="rollno">
+
+            </div>
+            <div>
+                   <label for="class">Class</label>
+                    <input type="text" name="class" id="class">
+            </div>
+           <div>
+                <label for="emailId">Email id</label>
+                <input type="email" name="emailId" id="emailId">
+           </div>
+           <div>
+                  <label for="mobile">Mobile No</label>
+                  <input type="text" name="mobile" id="mobile">
+                  
+           </div>
+           <div class="buttons">
+                  <input type="submit"class="btn"  value="Submit" name="submit">
+                  <input type="reset" class="btn" value="Reset">
+           </div>
+       </form>
+       <div class="main_update">
+          <h3>Update Data</h3>
+       
+            <form action="database.php" class="update">
+                <label for="uproll">Enter your Roll no</label>
+               <input type="text" name="uproll" id="uproll">
+               <div class="btn">
+                     <input type="submit" value="Submit" id="submit_update_del" name="updateRoll" >
+                     <input type="reset" value="Reset">
+               </div>
+            </form>
+              
+         
+       </div>
+        
+        
+    </div>
+</body>
+<script>
+        let insert = document.querySelector(".btn-1");
+        let insertForm = document.querySelector(".form_data");
+        let update = document.querySelector(".btn-2");
+        let updateForm = document.querySelector(".main_update");
+        let heading = document.querySelector(".form_data h4");
+        let update_del = document.getElementById("uproll");
+        let btn_up_del = document.getElementById("submit_update_del");
+        let del = document.querySelector(".btn-3");
+        let display = document.querySelector(".btn-4");
+  
+         let updateHead = document.querySelector(".main_update h3");
+        //  console.log(insertForm)
+        insert.addEventListener("click",()=>{
+           heading.innerHTML = "Enter Data for insert into database";
+            updateForm.style.display = "none";
+              insertForm.style.display = "block";
+        })
+       update.addEventListener("click",()=>{
+        updateHead.innerHTML="Update Record";
+        updateForm.style.display = "block";
+        update_del.name="uproll";
+        btn_up_del.name="updateRoll";
+        insertForm.style.display = "none";  
+     
+       })
+
+       del.addEventListener("click",()=>{
+        insertForm.style.display = "none";  
+
+            updateHead.innerHTML="Delete Record";
+            updateForm.style.display = "block";
+            update_del.name="delroll";
+            btn_up_del.name="deleteRoll";
+           
+            
+  
+       })
+       display.addEventListener("click",()=>{
+        insertForm.style.display = "none";  
+        update_del.name="disroll";
+        btn_up_del.name="display_roll";
+
+        updateHead.innerHTML="Display Record";
+        updateForm.style.display = "block";
+       })
+
+       
+      
+</script>
+</html>
