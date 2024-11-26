@@ -1,5 +1,4 @@
-
-          
+  
 .form_data h4{
  font-size: 1.5rem;
  font-weight: 400;
@@ -8,8 +7,7 @@
  .form_data{
      width: 50%;
      margin: auto;
-     /* padding: 2rem; */
-     /* display: none; */
+    
  }
  .form_data div{
      display: flex;
@@ -57,11 +55,9 @@
      border: none;
      cursor: pointer;
      outline: none;
-     
  }
  .btn-1{
      background-color: green;
-     
  }
  .btn-2{
      background-color: yellow;

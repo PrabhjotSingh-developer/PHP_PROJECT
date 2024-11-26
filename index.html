@@ -9,7 +9,6 @@
 <body>
      <div class="form_database">
         <div class="all_operations">
-
              <h2>Please Click the button which operation you want to perform</h2>
              <div class="operation_btn">
                   <button class="btn-1">Insert</button>
@@ -17,29 +16,26 @@
                   <button class="btn-3">Delete</button>
                   <button class="btn-4" name="display">Display</button>
              </div> 
-        
-        </div>
-         
+        </div>  
          <form action="database.php" class="form_data">
            <h4>Insert data</h4>
-            <div>
+            <div class="name_val">
                   <label for="name">Name</label>
                   <input type="text" name="name" id="name">
-            </div>
-            <div>
+                </div>
+            <div class="roll_val">
                    <label for="rollno">Roll No</label>
                    <input type="text" name="rollno" id="rollno">
-
             </div>
-            <div>
+            <div class="class_val">
                    <label for="class">Class</label>
                     <input type="text" name="class" id="class">
             </div>
-           <div>
+           <div class="email_val">
                 <label for="emailId">Email id</label>
                 <input type="email" name="emailId" id="emailId">
            </div>
-           <div>
+           <div class="mobile_val">
                   <label for="mobile">Mobile No</label>
                   <input type="text" name="mobile" id="mobile">
                   
@@ -60,11 +56,7 @@
                      <input type="reset" value="Reset">
                </div>
             </form>
-              
-         
-       </div>
-        
-        
+       </div>        
     </div>
 </body>
 <script>
@@ -77,9 +69,7 @@
         let btn_up_del = document.getElementById("submit_update_del");
         let del = document.querySelector(".btn-3");
         let display = document.querySelector(".btn-4");
-  
          let updateHead = document.querySelector(".main_update h3");
-        //  console.log(insertForm)
         insert.addEventListener("click",()=>{
            heading.innerHTML = "Enter Data for insert into database";
             updateForm.style.display = "none";
@@ -91,30 +81,20 @@
         update_del.name="uproll";
         btn_up_del.name="updateRoll";
         insertForm.style.display = "none";  
-     
        })
-
        del.addEventListener("click",()=>{
         insertForm.style.display = "none";  
-
             updateHead.innerHTML="Delete Record";
             updateForm.style.display = "block";
             update_del.name="delroll";
             btn_up_del.name="deleteRoll";
-           
-            
-  
        })
        display.addEventListener("click",()=>{
         insertForm.style.display = "none";  
         update_del.name="disroll";
         btn_up_del.name="display_roll";
-
         updateHead.innerHTML="Display Record";
         updateForm.style.display = "block";
-       })
-
-       
-      
+       })    
 </script>
 </html>
